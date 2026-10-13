@@ -36,7 +36,7 @@ a { color: inherit; }
 
 /* Marketing page */
 .page {
-  max-width: 720px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: max(56px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
   min-height: 100vh;
@@ -74,14 +74,8 @@ a { color: inherit; }
 .cta svg { width: 20px; height: 20px; flex: none; }
 .cta-note { margin: 14px 0 0; font-size: 15px; color: var(--text-2); }
 
-/* The devices: wider than the page, like the Playback cards, so the screens read. */
-.devices {
-  display: block;
-  width: min(1100px, calc(100vw - 32px));
-  height: auto;
-  margin: 0 0 48px 50%;
-  transform: translateX(-50%);
-}
+/* The devices: the page is as wide as this image. */
+.devices { display: block; width: 100%; height: auto; margin: 0 0 48px; }
 
 .points {
   list-style: none;
@@ -161,16 +155,9 @@ a { color: inherit; }
   .way .outs { gap: 5px; }
   .outs span { padding: 3px 8px; font-size: 12px; }
 }
-/* Two columns, a little wider than the page so each row of output pills fits on one line
-   (narrower windows stack the two services instead). */
-@media (min-width: 900px) {
-  .services {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    width: min(880px, calc(100vw - 32px));
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
+/* Two columns once each row of output pills fits on one line (narrower windows stack them). */
+@media (min-width: 920px) {
+  .services { grid-template-columns: 1fr 1fr; align-items: start; }
 }
 
 .foot { margin-top: auto; padding-top: 48px; text-align: center; font-size: 14px; color: var(--text-3); }
