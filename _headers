@@ -1,0 +1,18 @@
+# Cloudflare Pages headers.
+# Pages applies every block whose path matches, and joins a header set by more than one
+# block with a comma. So the /* policy below only holds restrictions both pages already
+# meet (a browser enforces each comma-separated CSP on its own), and on /spotify the
+# Referrer-Policy list ends with no-referrer, which is the value browsers use.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/spotify
+  Referrer-Policy: no-referrer
+  Cache-Control: no-store
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
