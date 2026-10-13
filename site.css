@@ -4,14 +4,14 @@
   --text-3: rgba(255, 255, 255, 0.5);
   --surface: rgba(255, 255, 255, 0.08);
   --line: rgba(255, 255, 255, 0.12);
-  --venus-base: #581a45;
+  --backdrop-base: #2a1748;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; min-height: 100%; }
 body {
-  background: var(--venus-base);
+  background: var(--backdrop-base);
   color: var(--text);
   font: 17px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,26 +19,19 @@ body {
 }
 a { color: inherit; }
 
-/* "Venus": the party screen's backdrop while Venus by Lady Gaga plays (the app's splash.jpg),
-   drawn as overlapping soft colour fields: magenta down the left, dusty rose at the top right,
-   a muted plum column at the top middle, deep aubergine pooling at the bottom. */
-.venus {
+/* "Dusk": soft overlapping violet fields. Purple sits between Apple Music's red and the greens
+   of the logo's arc and Spotify, so all three stand out on it. Lilac down the left, a mauve
+   glow at the top right, deep indigo pooling at the bottom. */
+.backdrop {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: var(--venus-base);
+  background-color: var(--backdrop-base);
   background-image:
-    radial-gradient(30% 28% at 50% 80%, rgba(58, 11, 60, 1), rgba(58, 11, 60, 0)),
-    radial-gradient(22% 30% at 36% 94%, rgba(64, 13, 58, 0.6), rgba(64, 13, 58, 0)),
-    radial-gradient(14% 30% at 50% 20%, rgba(94, 40, 58, 0.85), rgba(94, 40, 58, 0)),
-    radial-gradient(18% 22% at 30% 30%, rgba(130, 50, 94, 0.7), rgba(130, 50, 94, 0)),
-    radial-gradient(22% 22% at 100% 0%, rgba(126, 80, 88, 0.95), rgba(126, 80, 88, 0)),
-    radial-gradient(30% 24% at 70% 4%, rgba(150, 62, 92, 0.9), rgba(150, 62, 92, 0)),
-    radial-gradient(28% 30% at 96% 96%, rgba(98, 26, 74, 0.7), rgba(98, 26, 74, 0)),
-    radial-gradient(26% 38% at 100% 50%, rgba(120, 20, 76, 1), rgba(120, 20, 76, 0)),
-    radial-gradient(40% 58% at 0% 34%, rgba(142, 32, 100, 1), rgba(142, 32, 100, 0)),
-    radial-gradient(30% 30% at 12% 0%, rgba(124, 32, 76, 0.8), rgba(124, 32, 76, 0)),
-    linear-gradient(to bottom, #6c2350, #5c1d46 45%, #4e1641);
+    radial-gradient(45% 55% at 0% 30%, rgba(120, 70, 180, 0.7), rgba(120, 70, 180, 0)),
+    radial-gradient(35% 40% at 100% 0%, rgba(150, 90, 170, 0.55), rgba(150, 90, 170, 0)),
+    radial-gradient(60% 50% at 60% 110%, rgba(30, 14, 60, 1), rgba(30, 14, 60, 0)),
+    linear-gradient(170deg, #3d2266, #2a1748 60%, #1b0f33);
 }
 
 /* Marketing page */
@@ -70,13 +63,13 @@ a { color: inherit; }
   padding: 14px 24px;
   border-radius: 999px;
   background: #fff;
-  color: #3a1236;
+  color: #2a1748;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 10px 30px rgba(30, 4, 30, 0.35);
+  box-shadow: 0 10px 30px rgba(16, 8, 36, 0.35);
 }
-.cta:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(30, 4, 30, 0.45); }
+.cta:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(16, 8, 36, 0.45); }
 .cta:focus-visible { outline: 3px solid rgba(255, 255, 255, 0.6); outline-offset: 3px; }
 .cta svg { width: 20px; height: 20px; flex: none; }
 .cta-note { margin: 14px 0 0; font-size: 15px; color: var(--text-2); }
