@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Canopy Music</title>
-<meta name="description" content="Canopy Music is a party jukebox: an iPad, Mac or Apple TV plays the party, and guests queue songs from their phones. Apple Music, plus Spotify on iPad.">
+<meta name="description" content="Canopy Music is a party jukebox: an iPad, Mac or Apple TV plays the party, and guests queue songs from their phones. Apple Music or Spotify, on AirPlay, Spotify Connect or Sonos.">
 <meta property="og:title" content="Canopy Music">
 <meta property="og:description" content="A party jukebox. Guests queue songs from their phones; an iPad, Mac or Apple TV plays them.">
 <meta name="theme-color" content="#5a1d47">
@@ -36,10 +36,60 @@
       <p>The big screen shows what’s playing, what’s next, and a QR code for guests to join.</p>
     </li>
     <li>
-      <h2>Apple Music and Spotify</h2>
-      <p>Plays from Apple Music, plus Spotify on iPad. Requests and your playlist share one list.</p>
+      <h2>Apple Music or Spotify</h2>
+      <p>Pick a playlist from your library. Requests and your playlist share one list.</p>
     </li>
   </ul>
+
+  <section class="where" aria-labelledby="where-title">
+    <h2 id="where-title">Playback</h2>
+    <p class="where-lede">Canopy Music manages the queue. Playback options depend on your music service.</p>
+
+    <div class="services">
+      <article class="service">
+        <h3><img class="svc-logo am" src="apple-music.png" width="28" height="28" alt="">Apple Music</h3>
+        <dl>
+          <div class="way">
+            <dt>Canopy Music</dt>
+            <dd>The iPad, Mac or Apple TV running the Canopy Music app plays songs on-device.</dd>
+            <dd class="outs"><svg class="spk" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="1.5" width="11" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="10" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Device speaker</span><span>AirPlay 2</span></dd>
+          </div>
+          <div class="way">
+            <dt>Sonos</dt>
+            <dd>Your Sonos streams the songs with the Apple Music account linked in the Sonos app.</dd>
+            <dd class="outs"><svg class="spk" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="1.5" width="11" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="10" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Any room</span><span>Groups</span></dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="service">
+        <h3><img class="svc-logo" src="spotify.png" width="28" height="28" alt="">Spotify</h3>
+        <dl>
+          <div class="way">
+            <dt>Spotify for Mac or Windows</dt>
+            <dd>The desktop app plays while it’s open, even in the background.</dd>
+            <dd class="outs"><svg class="spk" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="1.5" width="11" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="10" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Device speaker</span><span>Spotify Connect</span><span>AirPlay (macOS)</span></dd>
+          </div>
+          <div class="way">
+            <dt>Sonos</dt>
+            <dd>Your Sonos streams the songs with the Spotify account linked in the Sonos app. No Spotify app needed.</dd>
+            <dd class="outs"><svg class="spk" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="1.5" width="11" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="10" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Any room</span><span>Groups</span></dd>
+          </div>
+          <div class="way">
+            <dt>Spotify for Apple&nbsp;TV</dt>
+            <dd>Works while the Spotify app is open on screen.</dd>
+            <dd class="outs"><svg class="spk" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="1.5" width="11" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="10" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Device speaker</span><span>AirPlay</span></dd>
+          </div>
+          <div class="way">
+            <dt>Spotify for iPhone or iPad</dt>
+            <dd>Works while device is unlocked and the Spotify app is open on screen.</dd>
+            <dd class="outs"><svg class="spk" viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="1.5" width="11" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="10" cy="12.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Device speaker</span><span>Spotify Connect</span><span>AirPlay</span></dd>
+          </div>
+        </dl>
+        <p class="fine">Spotify requires Premium and a one-time setup in Spotify’s developer dashboard.</p>
+      </article>
+    </div>
+  </section>
 
   <footer class="foot">
     <p>Canopy Music has no accounts or tracking.</p>

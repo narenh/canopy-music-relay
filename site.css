@@ -102,6 +102,57 @@ a { color: inherit; }
   .points { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Where the music plays */
+.where { margin-top: 56px; }
+.where > h2 { margin: 0; font-size: 26px; font-weight: 700; text-align: center; }
+.where-lede { margin: 8px auto 24px; max-width: 30em; text-align: center; color: var(--text-2); text-wrap: balance; }
+.services { display: grid; gap: 12px; }
+.service {
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.service h3 { margin: 0 0 6px; font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.svc-logo { width: 28px; height: 28px; flex: none; }
+/* The Apple Music image is the square app icon; round it as iOS does. */
+.svc-logo.am { border-radius: 22.5%; }
+.service dl { margin: 0; }
+.way { padding: 14px 0; border-top: 1px solid var(--line); }
+.way:first-child { border-top: 0; }
+.way dt { font-weight: 600; font-size: 16px; }
+.way dd { margin: 2px 0 0; color: var(--text-2); font-size: 15px; }
+/* The speaker icon hangs in the left margin, so pills that wrap line up under the first one. */
+.way .outs { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; padding-left: 26px; }
+.spk { position: absolute; left: 0; top: 2px; width: 18px; height: 18px; color: var(--text-3); }
+.outs span {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+}
+.fine { margin: 6px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-3); }
+.outs span { white-space: nowrap; }
+@media (max-width: 400px) {
+  .way .outs { gap: 5px; }
+  .outs span { padding: 3px 8px; font-size: 12px; }
+}
+/* Two columns, a little wider than the page so each row of output pills fits on one line
+   (narrower windows stack the two services instead). */
+@media (min-width: 900px) {
+  .services {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    width: min(880px, calc(100vw - 32px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .foot { margin-top: auto; padding-top: 48px; text-align: center; font-size: 14px; color: var(--text-3); }
 .foot p { margin: 0; }
 
