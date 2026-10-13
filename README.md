@@ -50,7 +50,7 @@ The page passes `state` on unchanged.
 Spotify calls the relay with `?code=…&state=…`, or `?error=…&state=…` (for example when the user cancels). The page forwards `code` or `error`, and `state`, with `location.replace` (so Back doesn't return to the code):
 
 - `to: "app"` → `canopy-music://spotify-callback?code=…&state=…`
-- `to: "tv"` → `http://{host}[:{port}]/spotify/callback?code=…&state=…`, only when `host` is a single-label `.local` name (letters, digits, hyphens) or an IPv4 address in 10.0.0.0/8, 172.16.0.0/12 or 192.168.0.0/16, and `port` is 1–65535.
+- `to: "tv"` → `http://{host}[:{port}]/spotify/callback?code=…&state=…`, only when `host` is a single-label `.local` name (letters, digits, hyphens) or an IPv4 address in 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16, and `port` is 1–65535.
 
 Anything else (no or malformed `state`, a different version, a short nonce, another host, both or neither of `code` and `error`, repeated parameters) isn't forwarded: the page says "This link isn't for this page. Start signing in to Spotify again from Canopy Music." Other query parameters are dropped.
 
@@ -59,7 +59,7 @@ Anything else (no or malformed `state`, a different version, a short nonce, anot
 - **Only the code passes through.** It's an authorization code for PKCE: useless without the code verifier, which never leaves the device that started the sign-in. There's no client secret.
 - **Nothing is stored or sent.** The page has no analytics, makes no requests besides its own files, never calls Spotify, and keeps nothing (no cookies or storage). `Cache-Control: no-store` and `Referrer-Policy: no-referrer` keep the code out of caches and referrers. The site is static files on Cloudflare Pages, with no server code of its own; like any host, Cloudflare sees the requested URL.
 - **No open redirect.** The only destinations are the app's scheme and `http` addresses on a private network, with a fixed path.
-- **Strict CSP** on `/spotify`: `default-src 'none'`, and scripts, styles and images only from this site. It's set twice: as a header in `_headers` (Cloudflare Pages), and as a `<meta http-equiv>` tag in the page so hosts that can't set headers get it too. Browsers ignore `frame-ancestors` in a meta tag, so only the header version stops the page being framed. The referrer policy is likewise both a header and a meta tag. The whole relay is [`spotify.js`](spotify.js), short enough to read in a minute.
+- **Strict CSP** on `/spotify`: `default-src 'none'`, and scripts, styles, and images only from this site. It's set twice: as a header in `_headers` (Cloudflare Pages), and as a `<meta http-equiv>` tag in the page so hosts that can't set headers get it too. Browsers ignore `frame-ancestors` in a meta tag, so only the header version stops the page being framed. The referrer policy is likewise both a header and a meta tag. The whole relay is [`spotify.js`](spotify.js), short enough to read in a minute.
 
 `node test/spotify.test.js` checks the forwarding rules.
 
