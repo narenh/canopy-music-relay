@@ -165,6 +165,8 @@ a { color: inherit; }
 
 .foot { margin-top: auto; padding-top: 48px; text-align: center; font-size: 14px; color: var(--text-3); }
 .foot p { margin: 0; }
+.foot code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text-2); }
+.foot a { color: var(--text-2); text-underline-offset: 2px; }
 
 /* Spotify relay page */
 .relay {
@@ -185,3 +187,8 @@ a { color: inherit; }
   .cta { transition: none; }
   .cta:hover { transform: none; }
 }
+
+/* The top cards' glyphs: the two services, the three hubs, a playlist. */
+.glyphs { display: flex; gap: 10px; align-items: center; height: 36px; margin-bottom: 12px; color: var(--text); }
+.glyphs svg { width: 34px; height: 34px; flex: none; }
+.glyphs .svc-logo { width: 32px; height: 32px; }
