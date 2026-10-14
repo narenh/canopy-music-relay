@@ -165,7 +165,8 @@ a { color: inherit; }
 
 .foot { margin-top: auto; padding-top: 48px; text-align: center; font-size: 14px; color: var(--text-3); }
 .foot p { margin: 0; }
-.foot code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text-2); }
+/* Monospace runs a little large next to the system font at the same size, so it's set smaller to match. */
+.foot .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; color: var(--text-2); }
 .foot a { color: var(--text-2); text-underline-offset: 2px; }
 
 /* Spotify relay page */
