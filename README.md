@@ -3,6 +3,7 @@
 The static site at [music.canopysf.com](https://music.canopysf.com/), served by Cloudflare Pages:
 
 - `/` (`index.html`): a short page about [Canopy Music](https://github.com/narenh/canopy-music).
+- `/support` (`support.html`): where to get help; the App Store support URL.
 - `/spotify` (`spotify.html` + `spotify.js`): the relay for Canopy Music's Spotify sign-in.
 
 No build step. Deploy the repository root as is. Canopy Music uses `https://music.canopysf.com/spotify` by default; you can also [host your own](#host-your-own).
